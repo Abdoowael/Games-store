@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>GameStore </title>
+    <!-- Font Awesome  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./fontawesome-free-6.7.2-web/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!--  AOS -->
+        <link rel="stylesheet" href="./aos-master/aos-master/dist/aos.css">
+        <!--  CSS -->
+        <link rel="stylesheet" href="./style.css">
+    </head>
+<body>
+    <!-- start loding -->
+     
+    <div id="loading-overlay">
+        <div class="load-box">
+
+            <div class="loading-spinner"> </div>
+         
+              <p class="load">Loading....</p> 
+    </div>
+    </div>
+    <!-- end loding -->
+    <!-- Header -->
+    <header>
+        <!-- Top Nav -->
+        <div class="top-nav">
+            <div class="container">
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+                <div class="top-nav-right">
+                    <div class="search-box">
+                        <input type="text" placeholder="Search products..." id="search-input">
+                        <button id="search-btn"><i class="fas fa-search"></i></button>
+                    </div>
+                    <div class="user-actions">
+                        <a href="#" class="user-icon"><i class="fas fa-user"></i></a>
+                        <a href="#" class="cart-icon" id="cart-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-count">0</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Nav -->
+        <nav class="main-nav">
+            <div class="container">
+                <div class="logo">
+                    <img src="./images/imagess/logo.png" alt="GameStore">
+                    <span>GameStore</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#home">Home</a></li>
+                    <li>
+                        <a href="#products">Products </a>
+                    </li>
+                    <li><a href="#deals">Deals</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </nav>
+        
+        <!-- Hero Section -->
+        <div class="hero-section">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Premium Gaming Products</h1>
+                    <p>Discover the latest gaming gear, high-performance PCs, and exclusive deals</p>
+                    <div class="hero-buttons">
+                        <button class="btn-primary">Shop Now</button>
+                        <button class="btn-secondary">View Deals</button>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">10K+</span>
+                            <span class="stat-label">Happy Customers</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">500+</span>
+                            <span class="stat-label">Products</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">24/7</span>
+                            <span class="stat-label">Support</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="./images/imagess/slide-1.jpg" alt="Gaming Setup">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Shopping Cart Sidebar -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>Shopping Cart</h3>
+            <button class="close-cart" id="close-cart"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <!-- Cart items will be  added here by jsss -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span class="total-amount">$0.00</span>
+            </div>
+            <button class="btn-checkout">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Featured Categories -->
+        <section class="categories">
+            <div class="container">
+                <h2 class="section-title">Shop by Category</h2>
+                <div class="categories-grid">
+                    <div class="category-card" data-aos="fade-down">
+                        <img src="./images/imagess/icon-mouse.png" alt="Gaming PCs">
+                        <h3>Gaming PCs</h3>
+                        <p>High-performance gaming computers</p>
+                        <a href="#" class="category-link">Shop Now</a>
+                    </div>
+                    <div class="category-card" data-aos="fade-down">
+                        <img src="./images/imagess/icon-gamepad.png" alt="Accessories">
+                        <h3>Accessories</h3>
+                        <p>Mice, keyboards, headsets & more</p>
+                        <a href="#" class="category-link">Shop Now</a>
+                    </div>
+                    <div class="category-card" data-aos="fade-down">
+                        <img src="./images/imagess/icon-gamepad-2.png" alt="Games">
+                        <h3>Games</h3>
+                        <p>Latest releases & classics</p>
+                        <a href="#" class="category-link">Shop Now</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Filters -->
+        <section class="product-filters">
+            <div class="container">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All Products</button>
+                    <button class="filter-btn" data-filter="new">New Arrivals</button>
+                    <button class="filter-btn" data-filter="sale">On Sale</button>
+                    <button class="filter-btn" data-filter="hot">Hot Items</button>
+                    <button class="filter-btn" data-filter="trending">Trending</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Products -->
+        <section class="featured-products">
+            <div class="container">
+                <h2 class="section-title">Featured Products</h2>
+                <div class="products-grid" id="products-grid">
+                    <div class="product-card" data-category="new">
+                        <div class="product-image">
+                            <img src="./images/imagess/product-1-xs.jpg" alt="Gaming Mouse">
+                            <div class="product-overlay">
+                                <button class="add-to-cart" data-id="1" data-name="Gaming Mouse Pro" data-price="89.99" data-date="2024-01-15">
+                                    <i class="fas fa-shopping-cart"></i> Add to Cart
+                                </button>
+                                <button class="quick-view"><i class="fas fa-eye"></i></button>
+                                <a href="product.html" class="view-details"><i class="fas fa-info-circle"></i></a>
+                            </div>
+                            <span class="product-badge">New</span>
+                        </div>
+                        <div class="product-info">
+                            <h3><a href="product.html">Gaming Mouse Pro</a></h3>
+                            <div class="product-meta">
+                                <span class="product-date"><i class="fas fa-calendar"></i> Added: Jan 15, 2024</span>
+                                <span class="product-stock"><i class="fas fa-check-circle"></i> In Stock</span>
+                            </div>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>(4.8)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">$89.99</span>
+                                <span class="original-price">$129.99</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-category="sale">
+                        <div class="product-image">
+                            <img src="./images/imagess/product-2-xs.jpg" alt="Gaming Keyboard">
+                            <div class="product-overlay">
+                                <button class="add-to-cart" data-id="2" data-name="Mechanical Gaming Keyboard" data-price="149.99" data-date="2024-01-10">
+                                    <i class="fas fa-shopping-cart"></i> Add to Cart
+                                </button>
+                                <button class="quick-view"><i class="fas fa-eye"></i></button>
+                                <a href="product.html" class="view-details"><i class="fas fa-info-circle"></i></a>
+                            </div>
+                            <span class="product-badge sale">Sale</span>
+                        </div>
+                        <div class="product-info">
+                            <h3><a href="product.html">Mechanical Gaming Keyboard</a></h3>
+                            <div class="product-meta">
+                                <span class="product-date"><i class="fas fa-calendar"></i> Added: Jan 10, 2024</span>
+                                <span class="product-stock"><i class="fas fa-check-circle"></i> In Stock</span>
+                            </div>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span>(4.2)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">$149.99</span>
+                                <span class="original-price">$199.99</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-category="trending">
+                        <div class="product-image">
+                            <img src="./images/imagess/product-3-xs.jpg" alt="Gaming Headset">
+                            <div class="product-overlay">
+                                <button class="add-to-cart" data-id="3" data-name="7.1 Gaming Headset" data-price="79.99" data-date="2024-01-20">
+                                    <i class="fas fa-shopping-cart"></i> Add to Cart
+                                </button>
+                                <button class="quick-view"><i class="fas fa-eye"></i></button>
+                                <a href="product.html" class="view-details"><i class="fas fa-info-circle"></i></a>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3><a href="product.html">7.1 Gaming Headset</a></h3>
+                            <div class="product-meta">
+                                <span class="product-date"><i class="fas fa-calendar"></i> Added: Jan 20, 2024</span>
+                                <span class="product-stock"><i class="fas fa-check-circle"></i> In Stock</span>
+                            </div>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>(4.9)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">$79.99</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-category="hot">
+                        <div class="product-image">
+                            <img src="./images/imagess/product-5-xs.jpg" alt="Gaming Monitor">
+                            <div class="product-overlay">
+                                <button class="add-to-cart" data-id="4" data-name="27\" Gaming Monitor" data-price="299.99" data-date="2024-01-05">
+                                    <i class="fas fa-shopping-cart"></i> Add to Cart
+                                </button>
+                                <button class="quick-view"><i class="fas fa-eye"></i></button>
+                                <a href="product.html" class="view-details"><i class="fas fa-info-circle"></i></a>
+                            </div>
+                            <span class="product-badge">Hot</span>
+                        </div>
+                        <div class="product-info">
+                            <h3><a href="product.html">27" Gaming Monitor</a></h3>
+                            <div class="product-meta">
+                                <span class="product-date"><i class="fas fa-calendar"></i> Added: Jan 5, 2024</span>
+                                <span class="product-stock"><i class="fas fa-check-circle"></i> In Stock</span>
+                            </div>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>(4.7)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">$299.99</span>
+                                <span class="original-price">$399.99</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-category="new">
+                        <div class="product-image">
+                            <img src="./images/imagess/product-7-xs.jpg" alt="Gaming Mousepad">
+                            <div class="product-overlay">
+                                <button class="add-to-cart" data-id="5" data-name="RGB Gaming Mousepad" data-price="29.99" data-date="2024-01-25">
+                                    <i class="fas fa-shopping-cart"></i> Add to Cart
+                                </button>
+                                <button class="quick-view"><i class="fas fa-eye"></i></button>
+                                <a href="product.html" class="view-details"><i class="fas fa-info-circle"></i></a>
+                            </div>
+                            <span class="product-badge">New</span>
+                        </div>
+                        <div class="product-info">
+                            <h3><a href="product.html">RGB Gaming Mousepad</a></h3>
+                            <div class="product-meta">
+                                <span class="product-date"><i class="fas fa-calendar"></i> Added: Jan 25, 2024</span>
+                                <span class="product-stock"><i class="fas fa-check-circle"></i> In Stock</span>
+                            </div>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span>(4.1)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">$29.99</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-category="sale">
+                        <div class="product-image">
+                            <img src="./images/imagess/product-11-xs.jpg" alt="Gaming Controller">
+                            <div class="product-overlay">
+                                <button class="add-to-cart" data-id="6" data-name="Wireless Gaming Controller" data-price="59.99" data-date="2024-01-12">
+                                    <i class="fas fa-shopping-cart"></i> Add to Cart
+                                </button>
+                                <button class="quick-view"><i class="fas fa-eye"></i></button>
+                                <a href="product.html" class="view-details"><i class="fas fa-info-circle"></i></a>
+                            </div>
+                            <span class="product-badge sale">Sale</span>
+                        </div>
+                        <div class="product-info">
+                            <h3><a href="product.html">Wireless Gaming Controller</a></h3>
+                            <div class="product-meta">
+                                <span class="product-date"><i class="fas fa-calendar"></i> Added: Jan 12, 2024</span>
+                                <span class="product-stock"><i class="fas fa-check-circle"></i> In Stock</span>
+                            </div>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>(4.6)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">$59.99</span>
+                                <span class="original-price">$79.99</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-category="hot">
+                        <div class="product-image">
+                            <img src="./images/imagess/product-12-xs.jpg" alt="Gaming Chair">
+                            <div class="product-overlay">
+                                <button class="add-to-cart" data-id="7" data-name="Ergonomic Gaming Chair" data-price="199.99" data-date="2024-01-08">
+                                    <i class="fas fa-shopping-cart"></i> Add to Cart
+                                </button>
+                                <button class="quick-view"><i class="fas fa-eye"></i></button>
+                                <a href="product.html" class="view-details"><i class="fas fa-info-circle"></i></a>
+                            </div>
+                            <span class="product-badge">Hot</span>
+                        </div>
+                        <div class="product-info">
+                            <h3><a href="product.html">Ergonomic Gaming Chair</a></h3>
+                            <div class="product-meta">
+                                <span class="product-date"><i class="fas fa-calendar"></i> Added: Jan 8, 2024</span>
+                                <span class="product-stock"><i class="fas fa-check-circle"></i> In Stock</span>
+                            </div>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>(4.8)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">$199.99</span>
+                                <span class="original-price">$299.99</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-category="trending">
+                        <div class="product-image">
+                            <img src="./images/imagess/product-13-xs.jpg" alt="Gaming Desk">
+                            <div class="product-overlay">
+                                <button class="add-to-cart" data-id="8" data-name="LED Gaming Desk" data-price="159.99" data-date="2024-01-18">
+                                    <i class="fas fa-shopping-cart"></i> Add to Cart
+                                </button>
+                                <button class="quick-view"><i class="fas fa-eye"></i></button>
+                                <a href="product.html" class="view-details"><i class="fas fa-info-circle"></i></a>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3><a href="product.html">LED Gaming Desk</a></h3>
+                            <div class="product-meta">
+                                <span class="product-date"><i class="fas fa-calendar"></i> Added: Jan 18, 2024</span>
+                                <span class="product-stock"><i class="fas fa-check-circle"></i> In Stock</span>
+                            </div>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span>(4.3)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">$159.99</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-category="new">
+                        <div class="product-image">
+                            <img src="./images/imagess/product-14-xs.jpg" alt="Gaming Microphone">
+                            <div class="product-overlay">
+                                <button class="add-to-cart" data-id="9" data-name="USB Gaming Microphone" data-price="49.99" data-date="2024-01-22">
+                                    <i class="fas fa-shopping-cart"></i> Add to Cart
+                                </button>
+                                <button class="quick-view"><i class="fas fa-eye"></i></button>
+                                <a href="product.html" class="view-details"><i class="fas fa-info-circle"></i></a>
+                            </div>
+                            <span class="product-badge">New</span>
+                        </div>
+                        <div class="product-info">
+                            <h3><a href="product.html">USB Gaming Microphone</a></h3>
+                            <div class="product-meta">
+                                <span class="product-date"><i class="fas fa-calendar"></i> Added: Jan 22, 2024</span>
+                                <span class="product-stock"><i class="fas fa-check-circle"></i> In Stock</span>
+                            </div>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>(4.5)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">$49.99</span>
+                                <span class="original-price">$69.99</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-category="sale">
+                        <div class="product-image">
+                            <img src="./images/imagess/product-1-xs.jpg" alt="Gaming Webcam">
+                            <div class="product-overlay">
+                                <button class="add-to-cart" data-id="10" data-name="4K Gaming Webcam" data-price="89.99" data-date="2024-01-30">
+                                    <i class="fas fa-shopping-cart"></i> Add to Cart
+                                </button>
+                                <button class="quick-view"><i class="fas fa-eye"></i></button>
+                                <a href="product.html" class="view-details"><i class="fas fa-info-circle"></i></a>
+                            </div>
+                            <span class="product-badge sale">Sale</span>
+                        </div>
+                        <div class="product-info">
+                            <h3><a href="product.html">4K Gaming Webcam</a></h3>
+                            <div class="product-meta">
+                                <span class="product-date"><i class="fas fa-calendar"></i> Added: Jan 30, 2024</span>
+                                <span class="product-stock"><i class="fas fa-check-circle"></i> In Stock</span>
+                            </div>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>(4.7)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">$89.99</span>
+                                <span class="original-price">$129.99</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-category="trending">
+                        <div class="product-image">
+                            <img src="./images/imagess/product-2-xs.jpg" alt="Gaming Speakers">
+                            <div class="product-overlay">
+                                <button class="add-to-cart" data-id="11" data-name="2.1 Gaming Speakers" data-price="129.99" data-date="2024-01-28">
+                                    <i class="fas fa-shopping-cart"></i> Add to Cart
+                                </button>
+                                <button class="quick-view"><i class="fas fa-eye"></i></button>
+                                <a href="product.html" class="view-details"><i class="fas fa-info-circle"></i></a>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3><a href="product.html">2.1 Gaming Speakers</a></h3>
+                            <div class="product-meta">
+                                <span class="product-date"><i class="fas fa-calendar"></i> Added: Jan 28, 2024</span>
+                                <span class="product-stock"><i class="fas fa-check-circle"></i> In Stock</span>
+                            </div>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span>(4.4)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">$129.99</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-category="hot">
+                        <div class="product-image">
+                            <img src="./images/imagess/product-3-xs.jpg" alt="Gaming Router">
+                            <div class="product-overlay">
+                                <button class="add-to-cart" data-id="12" data-name="Gaming WiFi Router" data-price="179.99" data-date="2024-01-14">
+                                    <i class="fas fa-shopping-cart"></i> Add to Cart
+                                </button>
+                                <button class="quick-view"><i class="fas fa-eye"></i></button>
+                                <a href="product.html" class="view-details"><i class="fas fa-info-circle"></i></a>
+                            </div>
+                            <span class="product-badge">Hot</span>
+                        </div>
+                        <div class="product-info">
+                            <h3><a href="product.html">Gaming WiFi Router</a></h3>
+                            <div class="product-meta">
+                                <span class="product-date"><i class="fas fa-calendar"></i> Added: Jan 14, 2024</span>
+                                <span class="product-stock"><i class="fas fa-check-circle"></i> In Stock</span>
+                            </div>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>(4.9)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">$179.99</span>
+                                <span class="original-price">$249.99</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Special Offers -->
+        <section class="special-offers">
+            <div class="container">
+                <h2 class="section-title">Special Offers</h2>
+                <div class="offers-grid">
+                    <div class="offer-card" data-aos="fade-down">
+                        <div class="offer-content">
+                            <h3>Gaming Bundle</h3>
+                            <p>Get 20% off when you buy mouse + keyboard together</p>
+                            <div class="offer-date">Valid until: Feb 15, 2024</div>
+                            <button class="btn-primary">Shop Bundle</button>
+                        </div>
+                        <div class="offer-image">
+                            <img src="./images/imagess/product-1-xs.jpg" alt="Gaming Bundle">
+                        </div>
+                    </div>
+                    <div class="offer-card" data-aos="fade-on">
+                        <div class="offer-content">
+                            <h3>Flash Sale</h3>
+                            <p>Limited time: 30% off all gaming headsets</p>
+                            <div class="offer-date">Valid until: Feb 10, 2024</div>
+                            <button class="btn-primary">Shop Now</button>
+                        </div>
+                        <div class="offer-image">
+                            <img src="./images/imagess/product-3-xs.jpg" alt="Flash Sale">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter -->
+        <section class="newsletter">
+            <div class="container">
+                <div class="newsletter-content">
+                    <h3>Stay Updated</h3>
+                    <p>Subscribe to our newsletter for exclusive deals and gaming news</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email">
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>GameStore</h4>
+                    <p>Your one-stop shop for premium gaming products and accessories.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#deals">Deals</a></li>
+                        <li><a href="#about">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="#shipping">Shipping Info</a></li>
+                        <li><a href="#returns">Returns</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                    <p><i class="fas fa-envelope"></i> info@gamestore.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Gaming St, Tech City</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 GameStore. All rights reserved.  </p>
+                <span>Made WITH LOVE By <b>Abdo Wael</b></span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+     <script src="./jquery.js"></script>
+     <script src="./aos-master/aos-master/dist/aos.js"> </script>
+    <script src="./script.js"></script>
+</body>
+</html>
