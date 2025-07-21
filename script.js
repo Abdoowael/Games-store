@@ -193,10 +193,12 @@ window.cart = {
 
 // Mobile Rosponsive
 function initMobileNavigation() {
-    $('.mobile-menu-btn').click(() => {
-        $('.nav-menu').fadeToggle()
+    document.querySelector('.mobile-menu-btn').addEventListener( 'click',(() => {
+        console.log(true);
+        
+        document.querySelector('.nav-menu').classList.toggle('active')
     
-    }) 
+    }) )
 }
 // Newsletter Form
 function initNewsletterForm() {
@@ -289,14 +291,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 transform: translateY(-100%);
                 transition: transform 0.3s ease;
                 z-index: 1000;
-                  display: flex;
+                display:none;
                 align-items: center;
+                justify-content: center;
                 gap: 20px;
                 margin-bottom: 0.75rem;
-            }
-            
-            .nav-menu.active {
-                transform: translateY(0);
+                
+                
+                
+                }
+                .nav-menu.active {
+                    display: flex;
+                    // transform: translateY(0);
+                
             }
             
             .dropdown-menu {
