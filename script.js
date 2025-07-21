@@ -193,7 +193,7 @@ window.cart = {
 
 // Mobile Rosponsive
 function initMobileNavigation() {
-    document.querySelector('.mobile-menu-btn').addEventListener( 'click',(() => {
+     document.querySelector('.mobile-menu-btn').addEventListener( 'click',(() => {
         console.log(true);
         
         document.querySelector('.nav-menu').classList.toggle('active')
