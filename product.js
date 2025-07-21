@@ -226,5 +226,43 @@ function initProductPage() {
 
 document.addEventListener('DOMContentLoaded', () => {
     initProductPage();
+
+     // Add CSS animations
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        @keyframes slideOut {
+            from {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            to {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+        }
+        .main-image img {
+            transition: opacity 0.3s ease;
+        }
+        .thumbnail {
+            transition: all 0.3s ease;
+        }
+        .color-option {
+            transition: all 0.3s ease;
+        }
+        .btn-wishlist {
+            transition: all 0.3s ease;
+        }
+    `;
+    document.head.appendChild(style);
  
 }); 

@@ -214,55 +214,123 @@ function initNewsletterForm() {
 }
 
 
-// // Product Filter
-// function initProductFilter() {
-//     document.addEventListener('click', (e) => {
-//         if (e.target.classList.contains('filter-btn')) {
-//             document.querySelectorAll('.filter-btn').forEach(btn => {
-//                 btn.classList.remove('active');
-//             });
-//             e.target.classList.add('active');
-//             const filter = e.target.dataset.filter;
-//             filterProducts(filter);
-//         }
-//     });
-// }
-
-// function filterProducts(filter) {
-//     const products = document.querySelectorAll('.product-card');
-//     let visibleCount = 0;
-//     products.forEach(product => {
-//         const category = product.dataset.category;
-//         let shouldShow = true;
-//         switch(filter) {
-//             case 'new':
-//                 shouldShow = category === 'new';
-//                 break;
-//             case 'sale':
-//                 shouldShow = category === 'sale';
-//                 break;
-//             default:
-//                 shouldShow = true;
-//         }
-//         if (shouldShow) {
-//             product.style.display = 'block';
-//             product.style.animation = 'fadeIn 0.3s ease';
-//             visibleCount++;
-//         } else {
-//             product.style.display = 'none';
-//         }
-//     });
-//     if (visibleCount > 0) {
-//         showCartNotification(`Found ${visibleCount} products matching filter`);
-//     } else {
-//         showCartNotification('No products found for this filter');
-//     }
-// }
-
 // Initialize all functionality when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     initCart();
     initMobileNavigation();
     initNewsletterForm();
-    // initProductFilter();
+    // Add CSS animations
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        
+        @keyframes slideOut {
+            from {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            to {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .filter-btn {
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--border-color);
+            background: white;
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .filter-btn:hover {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+        
+        .filter-btn.active {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+        
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--bg-dark);
+                flex-direction: column;
+                padding: 2rem;
+                transform: translateY(-100%);
+                transition: transform 0.3s ease;
+                z-index: 1000;
+                  display: flex;
+                align-items: center;
+                gap: 20px;
+                margin-bottom: 0.75rem;
+            }
+            
+            .nav-menu.active {
+                transform: translateY(0);
+            }
+            
+            .dropdown-menu {
+              display: flex;
+                align-items: center;
+                gap: 20px;
+                margin-bottom: 0.75rem;
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                background: rgba(255, 255, 255, 0.1);
+                margin-top: 0;
+                margin-left: 1rem;
+                border-radius: var(--radius-sm);
+                display: none;
+            }
+            
+            .dropdown-menu.active {
+                display: block;
+            }
+            
+            .dropdown-menu a {
+                color: white;
+                padding: 0.5rem 1rem;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+            
+            .dropdown-menu a:hover {
+                background-color: rgba(255, 255, 255, 0.1);
+                color: var(--accent-color);
+                padding-left: 1.5rem;
+            }
+        }
+    `;
+    document.head.appendChild(style);
 }); 
